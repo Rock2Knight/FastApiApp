@@ -1,7 +1,7 @@
 """ CRUD operations (Create, Read, Update, Delete) """
 from sqlalchemy.orm import Session
 
-from . import models, schemas
+from . import models, schemas       # correct: "from . import" to "import"
 
 """ Получить подменю из списка подменю по id """
 def get_submenu(db: Session, submenu_id: int):

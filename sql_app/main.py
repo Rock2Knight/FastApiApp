@@ -2,8 +2,9 @@
 from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.orm import  Session
 
-from . import crud, models, schemas
-from .database import SessionLocal, engine
+from . import models, schemas                     # correct: "from . import" to "import"
+from sql_app import crud
+from sql_app.database import SessionLocal, engine
 
 models.Base.metadata.create_all(bind=engine)   # Create the database tables
 
